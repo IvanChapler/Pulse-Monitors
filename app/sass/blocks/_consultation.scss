@@ -1,0 +1,25 @@
+.consultation{
+    min-height: 680px;
+    padding: 103px 0 92px 0;
+    background: url(../images/bg2_363.jpg) center (center/cover) no-repeat;
+    &__wrapper{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+    &__header{
+        font-size: 36px;
+        line-height: 1.2;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+    &__subtitle{
+        margin-top: 80px;
+        width: 397px;
+        font-size: 20px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #ffffff;
+    }
+}
