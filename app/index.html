@@ -84,12 +84,17 @@
     <section class="consultation">
         <div class="container">
             <div class="consultation__wrapper">
-                <h2 class="title title_form">Получите бесплатную консультацию по подбору пульсометра </h2>
+                <h2 class="title title_left">Получите бесплатную консультацию по подбору пульсометра </h2>
                 <div class="consultation__subtitle">Просто заполните форму заявки и мы перезвоним вам в течении 10 минут</div>
-                <fieldlist class="form">
-
-                </fieldlist>
-                <button class="button button_form">заказать кОНСУЛЬТАЦИЮ</button>
+                <form class="feed-form" action="#" method="post" autocomplete="on" enctype="multipart/form-data">
+                    <!-- <fieldlist"> -->
+                        <input placeholder="Ваше имя" type="text" value="" name="name" required>
+                        <input placeholder="Ваш телефон" type="number" value="" name="tel" required>
+                        <input placeholder="Ваш E-mail" type="email" value="" name="email" required>
+                        <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
+                    <!-- </fieldlist> -->
+                </form>
+                
                 </div>
         </div>
     </section>
