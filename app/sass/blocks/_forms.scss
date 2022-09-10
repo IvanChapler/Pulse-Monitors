@@ -1,0 +1,30 @@
+.feed-form{
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    input{
+        height: 50px;
+        padding: 0 20px;
+        background-color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        //text
+        font-size: 14px;
+        font-weight: 300;
+        color: #4b4b4b;
+        transition: 0.5s all;
+        &:not(:first-child){
+            margin-top: 15px;
+        }
+        &:valid{
+            border: 2px solid lightgreen;
+            background: lightgreen;
+        }
+        &:focus-within{
+            background: lightgreen;
+            transition: 2s all;
+        }
+        
+    }
+}

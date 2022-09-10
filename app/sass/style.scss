@@ -1,6 +1,7 @@
 @import 'base/variables';
 *{
     font-family: 'Museo Sans Cyrl', sans-serif;
+    box-sizing: border-box;
 }
 
 .container{
@@ -12,4 +13,6 @@
 @import 'blocks/buttons';
 @import 'blocks/title';
 @import 'blocks/advantages';
+@import 'blocks/consultation';
+@import 'blocks/forms';
 @import 'base/media'

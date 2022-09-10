@@ -106,6 +106,25 @@
             margin-top: 18px;
         }
     }
+    .consultation{
+        .title{
+            &_left{
+                text-align: center;
+                font-size: 30px;
+            }
+        }
+        &__subtitle{
+            margin-top: 56px;
+            padding: 0 20px;
+            text-align: center;
+            width: 100%;
+        }
+        .feed-form{
+            margin: 0 auto;
+            margin-top: 36px;
+            
+        }
+    }
 }
 @media (max-width: 575px){
     .header{
@@ -120,6 +139,7 @@
         &__contacts{
             .button{
                 right: 6px;
+                top: 16px;
                 width: 109px;
                 height: 21px;
                 font-size: 10px;
@@ -175,6 +195,23 @@
         }
         &__text{
             margin-top: 15px;
+        }
+    }
+    .consultation{
+        min-height: 600px;
+        padding: 73px 0 63px 0;
+        .title{
+            &_left{
+                font-size: 24px;
+            }
+        }
+        &__subtitle{
+            margin-top: 47px;
+            font-size: 16px;
+        }
+        .feed-form{
+            margin-top: 23px;
+            transform: scale(0.9);
         }
     }
 }

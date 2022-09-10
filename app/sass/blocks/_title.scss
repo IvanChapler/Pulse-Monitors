@@ -3,4 +3,10 @@
     font-weight: 700;
     color: #0d0d0d;
     text-align: center;
+    text-transform: uppercase;
+    &_left{
+        text-align: start;
+        font-size: 36px;
+        color: #ffffff;
+    }
 }
