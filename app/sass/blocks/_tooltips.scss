@@ -1,0 +1,32 @@
+span.tooltip {
+    padding: 0px 0px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+span.tooltip-info {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+  
+span.tooltip::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 1.5em;
+    font-size: 0.8rem;
+    padding: 1px 5px;
+    display: none;
+    color: #ebebeb;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    transition: opacity 0.1s ease-out;
+    z-index: 99;
+    text-align: left;
+    font-weight: 100;
+    line-height: 1.2;
+}
+
+span:hover::before {
+    display: inline-block;
+}
