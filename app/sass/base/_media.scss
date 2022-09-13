@@ -28,6 +28,12 @@
             margin-top: 26px;
         }
     }
+    .carousel{
+        &__inner{
+            max-width: 600px;
+            padding: 0 10px;
+        }
+    }
 }
 @media (max-width: 767px){
     .container{
@@ -124,6 +130,9 @@
             margin-top: 36px;
             
         }
+    }
+    .carousel{
+        padding: 51px 0;
     }
 }
 @media (max-width: 575px){
