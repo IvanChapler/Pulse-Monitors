@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //Слайдер
     $('.carousel__inner').slick({
         speed: 500,
         adaptiveHeight: true,
@@ -15,12 +16,31 @@ $(document).ready(function(){
             }
         ]
     });
+
+
     //Табы
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
           .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
           .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
+
+
+    //Подробнее
+    function toggleCard (selector) {
+        $(selector).each(function(i) {
+            $(this).on('click', function(e) {
+                e.preventDefault();
+                $('.catalog-item__base').eq(i).toggleClass('catalog-item__base_active');
+                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active')
+            })
+        });
+    };
+
+    toggleCard('.catalog-item__more');
+    toggleCard('.catalog-item__back');
+
+
 });
 
 //Эксперимент. Спарсить дата атрибут и вывести его значения json в консоль P.S: Почему-то не робит
