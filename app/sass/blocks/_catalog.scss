@@ -20,9 +20,9 @@
         color: #6b6b6b;
         transform: skew(-25deg);
         cursor: pointer;
-        transition: 0.3s all;
+        transition: 0.5s all;
         &:hover{
-            box-shadow: 0 0 15px 5px lightgreen;
+            box-shadow: 0 0 15px 5px $main-color;
             border-color: transparent;
         }
         div{
@@ -36,9 +36,12 @@
     }
     &__content{
         margin-top: 59px;
-        display: flex;
+        display: none;
         flex-flow: row wrap;
         justify-content: space-between;
+        &_active{
+            display: flex;
+        }
     }
 }
 .catalog-item{
