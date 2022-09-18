@@ -132,7 +132,7 @@
         }
     }
     .carousel{
-        padding: 51px 0;
+        padding: 71px 0;
     }
 }
 @media (max-width: 575px){
@@ -222,5 +222,8 @@
             margin-top: 23px;
             transform: scale(0.9);
         }
+    }
+    .carousel{
+        min-height: 460px;
     }
 }

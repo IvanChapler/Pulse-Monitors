@@ -16,3 +16,9 @@ $(document).ready(function(){
         ]
     });
 });
+//Спарсить дата атрибут и вывести его значения json в консоль PS Почему то не робит
+const el = document.querySelector("span");
+let json = el.dataset.profession;
+let data = json.parse(json);
+console.log(data.name);
+console.log(data.profession);
