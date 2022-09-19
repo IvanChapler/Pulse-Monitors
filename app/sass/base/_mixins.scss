@@ -1,0 +1,18 @@
+@mixin on-hover {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+}
+@mixin hover-supported {    
+    /*
+    Оптимизация хаверов. Чтобы не отображались на сенсорах и др. устройствах, а толкьо на ПЕКА
+    https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices
+    */
+    @media not all and (pointer: coarse) {
+        &:hover {
+            @content;
+        }
+    }
+}

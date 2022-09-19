@@ -1,3 +1,4 @@
+@import '../base/mixins';
 span.tooltip {
     padding: 0px 0px;
     position: relative;
@@ -27,6 +28,16 @@ span.tooltip::before {
     line-height: 1.2;
 }
 
-span:hover::before {
-    display: inline-block;
+// @media (hover: hover) {
+//     span:hover::before {
+//         display: inline-block;
+//     }
+// }
+
+span{
+    @include hover-supported{
+        &::before{
+            display: inline-block;
+        }
+    }
 }

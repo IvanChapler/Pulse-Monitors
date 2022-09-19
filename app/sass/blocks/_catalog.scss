@@ -21,7 +21,7 @@
         transform: skew(-25deg);
         cursor: pointer;
         transition: 0.5s all;
-        &:hover{
+        @include hover-supported{
             box-shadow: 0 0 15px 5px $main-color;
             border-color: transparent;
         }

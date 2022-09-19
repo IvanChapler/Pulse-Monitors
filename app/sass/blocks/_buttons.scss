@@ -1,3 +1,4 @@
+@import '../base/mixins';
 .button{
     display: block;
     width: 150px;
@@ -12,7 +13,7 @@
     color: #ffff;
     margin-top: 6px;
     cursor: pointer;
-    &:hover{
+    @include hover-supported{
         box-shadow: 0 0 15px 5px lightgreen;
         border-color: transparent;
     }
@@ -36,7 +37,7 @@
         width: 131px;
         height: 40px;
         &:hover{
-            box-shadow: none;
+            box-shadow: initial;
         }
     }
 }
