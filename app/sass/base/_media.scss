@@ -1,3 +1,10 @@
+@media (pointer: coarse){
+    .footer{
+        .bg{
+            display: none;
+        }
+    }
+}
 @media (max-width: 991px){
     .container{
         width: 750px;
@@ -42,6 +49,34 @@
     .catalog-item{
         margin-left: 15px;
         margin-right: 15px;
+    }
+    .footer{
+        &__info{
+            padding: 0;
+            height: 80px;
+            top: auto;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        &__adress{
+            font-size: 18px;
+        }
+        &__tel{
+            margin-top: 0;
+            font-size: 18px;
+        }
+        &__wrapper{
+            margin: 0;
+            justify-content: space-around;
+            align-content: flex-start;
+        }
+        &__social{
+            width: 34px;
+            height: 34px;
+        }
     }
 }
 @media (max-width: 767px){
@@ -150,6 +185,21 @@
         }
         &__tab{
             font-size: 16px;
+        }
+    }
+    .reviews{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .footer{
+        &__adress{
+            font-size: 15px;
+        }
+        &__tel{
+            font-size: 15px;
+        }
+        &__social{
+            margin-left: 22px;
         }
     }
 }
@@ -263,6 +313,58 @@
     .catalog-item{
         &:last-child{
             margin-bottom: 0;
+        }
+    }
+    .reviews{
+        &__item{
+            display: flex;
+            flex-flow: column nowrap;
+            position: relative;
+        }
+        &__item:not(:first-child){
+            margin-top: 70px;
+        }
+        &__img{
+            float: initial;
+            margin-right: 0;
+            margin-top: 60px;
+            width: 129px;
+            height: 129px;
+        }
+        &__content{
+            margin-left: 0;
+            margin-top: 20px;
+        }
+        &__name{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &__marathon{
+            position: absolute;
+            top: 15px;
+            left: 0;
+        }
+        &__descr{
+            margin-top: 0;
+        }
+    }
+    .footer{
+        &__info{
+            min-height: 115px;
+            padding: 14px 0 17px;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        &__adress, &__tel, &__wrapper{
+            padding: 0 20px;
+        }
+        &__adress{
+            font-size: 13px;
+        }
+        &__social{
+            width: 32px;
+            height: 32px;
         }
     }
 }

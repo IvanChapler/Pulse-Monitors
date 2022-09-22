@@ -36,7 +36,23 @@ $(document).ready(function(){
             })
         });
     };
+    
 
+    //Убирает затемнение карты и info блок
+    document.getElementById('hider').onclick = function() {
+        document.getElementById('hider').classList.toggle('bg-none');
+        document.getElementById('hider2').classList.toggle('footer__info-none');
+    };
+    //Добавляет затемнение карты и info блок при клике !вне! этого блока
+    $(document).mouseup(function (o) {
+        if ($('#hider').has(o.target).length === 0){
+            $('#hider').removeClass('bg-none');
+            $('#hider2').removeClass('footer__info-none')
+        }
+    });
+
+    
+    
     toggleCard('.catalog-item__more');
     toggleCard('.catalog-item__back');
 
