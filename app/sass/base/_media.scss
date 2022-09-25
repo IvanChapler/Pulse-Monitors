@@ -1,3 +1,4 @@
+//Чтобы бэкграунд футера не отображался на недекстопных экранах
 @media (pointer: coarse){
     .footer{
         .bg{
@@ -113,7 +114,7 @@
         }
     }
     .promo{
-        min-height: 530px;
+        min-height: 650px;
         padding-top: 10px;
         &__wrapper{
             padding-top: 75px;
@@ -123,9 +124,6 @@
         }
         &__subheader{
             font-size: 20px;
-        }
-        &__icons{
-            margin-top: 44px;
         }
         &__icon{
             margin-left: 38px;
@@ -142,11 +140,19 @@
         padding-bottom: 61px;
         &__wrapper{
             flex-flow: row wrap;
-            
+            &::after{
+                content: '';
+                width: 100%;
+                order: 0;
+            }
         }
         &__item{
-            &:nth-child(3){
+            &:nth-child(3n){
                 margin-top: 20px;
+                width: 100%;
+            }
+            .new-string, .new-string ~ .item {
+                order: 1;
             }
         }
         &__title{
@@ -224,15 +230,22 @@
         }
     }
     .promo{
-        min-height: 460px;
+        min-height: 650px;
+        padding-top: 21px;
         &__wrapper{
-            padding-top: 65px;
+            padding-top: 111px;
         }
         &__header{
-            font-size: 28px;
+            font-size: 27px;
+            padding: 0 5px;
         }
         &__subheader{
+            margin-top: 23px;
             font-size: 15px;
+            padding: 0 5px;
+        }
+        &__icons{
+            margin-top: 48px;
         }
         &__icon{
             margin-left: 17px;
@@ -246,7 +259,7 @@
         }
         .button{
             &_main{
-                margin-top: 45px;
+                
                 width: 223px;
                 font-size: 15px;
             }
