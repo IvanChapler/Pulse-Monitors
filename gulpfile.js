@@ -27,6 +27,9 @@ function styles() {
 function scripts() {
     return src([
         'node_modules/jquery/dist/jquery.js',
+        'app/js/slick.min.js',
+        'app/js/jquery.validate.min.js',
+        'app/js/jquery.inputmask.js',
         'app/js/main.js'
     ])
         .pipe(concat('main.min.js'))

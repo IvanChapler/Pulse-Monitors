@@ -22,4 +22,16 @@
         font-weight: 500;
         color: #ffffff;
     }
+    input.error{
+        border: 2px solid rgb(255, 138, 138);
+        &:focus-within{
+            border: 2px solid transparent;
+        }
+    }
+    label.error{
+        text-align: center;
+        font-size: 90%;
+        margin-top: 5px;
+        color: #ffffff;
+    }
 }

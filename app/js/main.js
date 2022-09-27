@@ -1,9 +1,11 @@
 $(document).ready(function(){
-    //Слайдер
+    /*
+    Слайдер
+    */
     $('.carousel__inner').slick({
         speed: 500,
         adaptiveHeight: true,
-        prevArrow: '<button type="button" class="slick-prev"><img src="icons/chevron_left_solid_980.pngg" alt="arrow-left"></button>',
+        prevArrow: '<button type="button" class="slick-prev"><img src="icons/chevron_left_solid_980.png" alt="arrow-left"></button>',
         nextArrow: '<button type="button" class="slick-next"><img src="icons/chevron_right_solid_982.png" alt="arrow-right"></button>',
         responsive: [
             {
@@ -17,16 +19,18 @@ $(document).ready(function(){
         ]
     });
 
-
-    //Табы
+    /*
+    Табы
+    */
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
           .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
           .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
 
-
-    //Подробнее
+    /*
+    Подробнее
+    */
     function toggleCard (selector) {
         $(selector).each(function(i) {
             $(this).on('click', function(e) {
@@ -36,9 +40,13 @@ $(document).ready(function(){
             })
         });
     };
-    
+    toggleCard('.catalog-item__more');
+    toggleCard('.catalog-item__back');
 
-    //Убирает затемнение карты и info блок
+    /*
+    Футер/карта
+    */
+    //Убирает затемнение карты и info блок при клике !на! этот блок
     document.getElementById('hider').onclick = function() {
         document.getElementById('hider').classList.toggle('bg-none');
         document.getElementById('hider2').classList.toggle('footer__info-none');
@@ -51,13 +59,64 @@ $(document).ready(function(){
         }
     });
 
-    
-    
-    toggleCard('.catalog-item__more');
-    toggleCard('.catalog-item__back');
+    /*
+    Модальные окна
+    */
+    $('[data-modal=consultation]').on('click', function() {
+        $('.overlay, #consultation').fadeIn('300');
+    });
+    $('[data-close=close]').on('click', function (e) {
+        $('.overlay, #consultation, #order, #thanks').fadeOut('fast');
+    });
+    //Получаем название определенного пульсометра из карточки и вставляем его в модалку
+    $('.button_mini').each(function (i) {
+        $(this).on('click', function () {
+            $('#order .modal__description').text($('.catalog-item__subtitle').eq(i).text());
+            $('.overlay, #order').fadeIn(350);
+        })
+    });
 
+    /*
+    Валидатор формы jquery-validate
+    */
+    function validateForm(form){
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                tel: "required",
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: "Пожалуйста, введите своё имя",
+                    minlength: jQuery.validator.format("Пожалуйста, введите не менее {0} символов")
+                },
+                tel: "Пожалуйста, введите свой телефон",
+                email: {
+                    required: 'Пожалуйста, введите свою почту',
+                    email: "Пожалуйста, введите корректный адрес почты"
+                }
+            }
+        });
+    };
+    validateForm('#consultation-form');
+    validateForm('#consultation .feed-form');
+    validateForm('#order .feed-form');
+
+    /*
+    Маска формы. inputmask.jQuery
+    */
+    $('input[name=tel]').inputmask("+7 (999) 999-99-99");
 
 });
+
+
 
 //Эксперимент. Спарсить дата атрибут и вывести его значения json в консоль P.S: Почему-то не робит
 const el = document.querySelector("span");

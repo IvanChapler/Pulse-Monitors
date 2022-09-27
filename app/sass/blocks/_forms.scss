@@ -2,7 +2,7 @@
     margin-top: 36px;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    min-width: 300px;
     input{
         height: 50px;
         padding: 0 20px;
@@ -13,18 +13,23 @@
         font-size: 14px;
         font-weight: 300;
         color: #4b4b4b;
-        transition: 0.5s all;
+        transition: border 0.5s, background 0.5s;
         &:not(:first-child){
             margin-top: 15px;
         }
         &:valid{
             border: 2px solid lightgreen;
-            background: lightgreen;
+            
         }
         &:focus-within{
+            outline: none;
+            border: 2px solid transparent;
             background: lightgreen;
-            transition: 2s all;
+            transition: border 0.3s ease-out, background 1s ease-out;
         }
-        
     }
+    &_mt25{
+        margin-top: 25px;
+    }
+    
 }
