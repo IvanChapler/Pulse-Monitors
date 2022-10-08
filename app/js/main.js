@@ -1,3 +1,5 @@
+"use strict";
+
 $(document).ready(function(){
     /*
     Слайдер
@@ -36,7 +38,7 @@ $(document).ready(function(){
             $(this).on('click', function(e) {
                 e.preventDefault();
                 $('.catalog-item__base').eq(i).toggleClass('catalog-item__base_active');
-                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active')
+                $('.catalog-item__list').eq(i).toggleClass('catalog-item__list_active');
             })
         });
     };
@@ -114,6 +116,22 @@ $(document).ready(function(){
     */
     $('input[name=tel]').inputmask("+7 (999) 999-99-99");
 
+    /*
+    Плавная прокрутка и pageup
+    */
+    $(window).scroll(function() {                   
+        if ($(this).scrollTop() > 1600) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+    // Плавная
+    $("a[href^='#']").click(function(){
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+    });
 });
 
 
