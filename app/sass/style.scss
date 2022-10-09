@@ -1,4 +1,7 @@
 @import 'base/variables';
+@import 'base/animations';
+@import 'base/mixins';
+
 *{
     font-family: 'Museo Sans Cyrl', sans-serif;
     box-sizing: border-box;
@@ -22,5 +25,4 @@
 @import 'blocks/footer';
 @import 'blocks/modal';
 @import 'blocks/pageup';
-@import 'base/mixins';
 @import 'base/media'

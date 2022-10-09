@@ -119,6 +119,7 @@ $(document).ready(function(){
     /*
     Плавная прокрутка и pageup
     */
+   // Pageup
     $(window).scroll(function() {                   
         if ($(this).scrollTop() > 1600) {
             $('.pageup').fadeIn();
@@ -126,7 +127,7 @@ $(document).ready(function(){
             $('.pageup').fadeOut();
         }
     });
-    // Плавная
+    // Плавная прокрутка 
     $("a[href^='#']").click(function(){
         const _href = $(this).attr("href");
         $("html, body").animate({scrollTop: $(_href).offset().top+"px"});

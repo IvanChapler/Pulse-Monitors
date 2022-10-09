@@ -18,6 +18,19 @@
             display: block;
             margin: 0 auto;
         }
+        &:nth-child(1) > img{
+            animation: cupAnim 6s infinite linear alternate;
+        }
+        &:nth-child(2) > img{
+            animation: heartAnim 0.8s infinite ease alternate;
+        }
+        &:nth-child(2) > img:hover{
+            animation-play-state: paused;
+        }
+        &:nth-child(3) > img{
+            animation: bootAnim 2s infinite alternate-reverse ease; 
+        }
+        animation: name duration timing-function delay iteration-count direction fill-mode;
     }
     &__title{
         margin-top: 38px;
