@@ -30,6 +30,7 @@ function scripts() {
         'app/js/slick.min.js',
         'app/js/jquery.validate.min.js',
         'app/js/jquery.inputmask.js',
+        'app/js/wow.min.js',
         'app/js/main.js'
     ])
         .pipe(concat('main.min.js'))

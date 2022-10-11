@@ -1,9 +1,9 @@
 "use strict";
 
 $(document).ready(function(){
-    /*
-    Слайдер
-    */
+    
+    // СЛАЙДЕР
+    
     $('.carousel__inner').slick({
         speed: 500,
         adaptiveHeight: true,
@@ -21,18 +21,20 @@ $(document).ready(function(){
         ]
     });
 
-    /*
-    Табы
-    */
+
+    
+    // ТАБЫ
+    
     $('ul.catalog__tabs').on('click', 'li:not(.catalog__tab_active)', function() {
         $(this)
           .addClass('catalog__tab_active').siblings().removeClass('catalog__tab_active')
           .closest('div.container').find('div.catalog__content').removeClass('catalog__content_active').eq($(this).index()).addClass('catalog__content_active');
     });
 
-    /*
-    Подробнее
-    */
+
+    
+    // ПОДРОБНЕЕ
+    
     function toggleCard (selector) {
         $(selector).each(function(i) {
             $(this).on('click', function(e) {
@@ -45,9 +47,10 @@ $(document).ready(function(){
     toggleCard('.catalog-item__more');
     toggleCard('.catalog-item__back');
 
-    /*
-    Футер/карта
-    */
+
+    
+    // ФУТЕР/КАРТА
+    
     //Убирает затемнение карты и info блок при клике !на! этот блок
     document.getElementById('hider').onclick = function() {
         document.getElementById('hider').classList.toggle('bg-none');
@@ -61,9 +64,10 @@ $(document).ready(function(){
         }
     });
 
-    /*
-    Модальные окна
-    */
+
+    
+    // МОДАЛЬНЫЕ ОКНА
+    
     $('[data-modal=consultation]').on('click', function() {
         $('.overlay, #consultation').fadeIn('300');
     });
@@ -78,9 +82,10 @@ $(document).ready(function(){
         })
     });
 
-    /*
-    Валидатор формы jquery-validate
-    */
+
+    
+    // ВАЛИДАТОР ФОРМЫ jquery-validate
+    
     function validateForm(form){
         $(form).validate({
             rules: {
@@ -111,14 +116,16 @@ $(document).ready(function(){
     validateForm('#consultation .feed-form');
     validateForm('#order .feed-form');
 
-    /*
-    Маска формы. inputmask.jQuery
-    */
+
+    
+    // МАСКА ФОРМЫ - inputmask.jQuery
+    
     $('input[name=tel]').inputmask("+7 (999) 999-99-99");
 
-    /*
-    Плавная прокрутка и pageup
-    */
+    
+
+    // ПЛАВНАЯ ПРОКРУТКА И pageup
+    
    // Pageup
     $(window).scroll(function() {                   
         if ($(this).scrollTop() > 1600) {
@@ -127,12 +134,23 @@ $(document).ready(function(){
             $('.pageup').fadeOut();
         }
     });
+    
     // Плавная прокрутка 
-    $("a[href^='#']").click(function(){
-        const _href = $(this).attr("href");
-        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
-        return false;
-    });
+    function smothScroll(anchor){
+        $(anchor).click(function(){
+            const _href = $(this).attr("href");
+            $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+            return false;
+        });
+    }
+
+    smothScroll("a[href^='#catalog-anchor']");
+    smothScroll("a[href^='#up']");
+
+    // ВСПЛЫВАНИЕ ОТЗЫВОВ - WOW.js + animate.css
+    
+    new WOW().init();
+
 });
 
 

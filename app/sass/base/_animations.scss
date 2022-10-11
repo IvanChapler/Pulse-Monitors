@@ -16,10 +16,9 @@
 }
 
 @keyframes cupAnim{
-    0%{transform:translate(5px, 15px);}
+    0%{transform:translate(5px, 15px) rotateY(-15deg);}
     20%{transform: rotate(-15deg);}
-    40%{transform: translate(-5px, -5px);}
-    60%{transform: rotate(15deg);}
-    80%{transform: translate(5px, 10px);}
-    100%{transform: rotate(5deg);}
+    50%{transform: translate(-5px, -5px) rotateY(-35deg);}
+    80%{transform: rotate(15deg) rotateY(25deg);}
+    100%{transform: translate(5px, 10px) rotateY(25deg);}
 }

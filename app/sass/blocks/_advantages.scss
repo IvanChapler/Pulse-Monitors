@@ -14,12 +14,14 @@
         //text
         text-align: center;
         color: #0d0d0d;
+        perspective: 500px;
         img{
             display: block;
             margin: 0 auto;
+            transform: scaleZ(10);
         }
         &:nth-child(1) > img{
-            animation: cupAnim 6s infinite linear alternate;
+            animation: cupAnim 6s infinite linear alternate-reverse;
         }
         &:nth-child(2) > img{
             animation: heartAnim 0.8s infinite ease alternate;
