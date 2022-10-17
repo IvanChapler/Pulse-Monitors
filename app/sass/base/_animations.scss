@@ -15,7 +15,7 @@
     to{transform: rotate(0deg);}
 }
 
-@keyframes cupAnim{
+@keyframes cupAnim {
     0%{transform:translate(5px, 15px) rotateY(-15deg);}
     20%{transform: rotate(-15deg);}
     50%{transform: translate(-5px, -5px) rotateY(-35deg);}

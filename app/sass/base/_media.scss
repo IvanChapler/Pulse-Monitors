@@ -42,15 +42,6 @@
             padding: 0 10px;
         }
     }
-    .catalog{
-        &__content{
-            justify-content: center;
-        }
-    }
-    .catalog-item{
-        margin-left: 15px;
-        margin-right: 15px;
-    }
     .footer{
         &__info{
             padding: 0;
@@ -192,6 +183,9 @@
         &__tab{
             font-size: 16px;
         }
+        &__content{
+            margin: 0 20px;
+        }
     }
     .reviews{
         max-width: 90%;
@@ -212,40 +206,41 @@
 @media (max-width: 575px){
     .header{
         &__logo{
-            width: 200px;
+            width: 190px;
         }
         &__official{
             span{
                 font-size: 12px;
+                font-weight: 300;
+                width: 90px;
+                top: 45%;
+                transform: translateY(-50%);
             }
         }
         &__contacts{
             .button{
-                right: 6px;
-                top: 16px;
-                width: 109px;
-                height: 21px;
-                font-size: 10px;
+                display: none;
             }
         }
     }
     .promo{
-        min-height: 650px;
+        min-height: 620px;
         padding-top: 21px;
         &__wrapper{
-            padding-top: 111px;
+            padding-top: 101px;
         }
         &__header{
-            font-size: 27px;
-            padding: 0 5px;
+            font-size: 26px;
+            padding: 0 50px;
+            line-height: 1.4;
         }
         &__subheader{
-            margin-top: 23px;
-            font-size: 15px;
-            padding: 0 5px;
+            margin-top: 35px;
+            font-size: 13px;
+            padding: 0 20px;
         }
         &__icons{
-            margin-top: 48px;
+            margin-top: 33px;
         }
         &__icon{
             margin-left: 17px;
@@ -259,9 +254,9 @@
         }
         .button{
             &_main{
-                
-                width: 223px;
-                font-size: 15px;
+                margin-top: 40px;
+                width: 203px;
+                font-size: 14px;
             }
         }
         &__link{
@@ -310,7 +305,7 @@
     }
     .catalog{
         &__tabs{
-            margin: 31px 40px 0px;
+            margin: 31px 40px;
             flex-wrap: wrap;
         }
         &__tab{
@@ -321,7 +316,7 @@
             margin-top: 8px;   
         }
         &__content{
-            margin-top: 49px;
+            
         }
     }
     .catalog-item{
@@ -330,6 +325,7 @@
         }
     }
     .reviews{
+        
         &__item{
             display: flex;
             flex-flow: column nowrap;
@@ -366,12 +362,12 @@
     .footer{
         &__info{
             min-height: 115px;
-            padding: 14px 0 17px;
+            padding: 2px 0 17px;
             flex-wrap: wrap;
-            align-content: space-between;
+            align-content: center;
         }
         &__adress, &__tel, &__wrapper{
-            padding: 0 20px;
+            padding: 12px 50px 0;
         }
         &__adress{
             font-size: 13px;
@@ -392,5 +388,10 @@
         &_mt25{
             min-width: 100%;
         }
+    }
+    .pageup{
+        right: 20px;
+        bottom: 10px;
+        width: 40px;
     }
 }

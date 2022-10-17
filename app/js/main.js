@@ -63,7 +63,37 @@ $(document).ready(function(){
             $('#hider2').removeClass('footer__info-none')
         }
     });
+    //И также добавляет при прокрутке вверх (надо найти способ, чтобы прокрутка отсчитывалась сниху) (найден)
+    
+    
+    
+    window.onscroll = function(ev) {
+        
+        if ((window.innerHeight + window.scrollY) < document.body.offsetHeight - 100) {
+            $('#hider').removeClass('bg-none');
+            $('#hider2').removeClass('footer__info-none')
+            // alert("Вы достигли дна)");
+        }
+    };
 
+                   
+    // $('html, body').on('mousewheel MozMousePixelScroll', function (event) {
+    //     var delta = event.originalEvent.wheelDelta * -1
+    //                   || event.originalEvent.detail;
+    //     if(delta < 10){
+    //         console.log('scroll up');
+    //         $('#hider').removeClass('bg-none');
+    //         $('#hider2').removeClass('footer__info-none')
+    //     }
+    // });
+
+    // $('html, body, footer').bind('mousewheel', function(e) {
+    //     if(e.originalEvent.wheelDelta / 120 > 0) {
+    //         $('#hider').removeClass('bg-none');
+    //         $('#hider2').removeClass('footer__info-none')
+    //     } else {
+    //     }
+    // });
 
     
     // МОДАЛЬНЫЕ ОКНА
@@ -147,9 +177,13 @@ $(document).ready(function(){
     smothScroll("a[href^='#catalog-anchor']");
     smothScroll("a[href^='#up']");
 
+    
+    
     // ВСПЛЫВАНИЕ ОТЗЫВОВ - WOW.js + animate.css
     
     new WOW().init();
+
+    
 
 });
 
